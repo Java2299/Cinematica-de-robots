@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{fourier}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Javier Medina}
+\begin{document}
+\textbf{Medina Rodríguez Francisco javier \\
+Cinemática de robots\\
+Tarea 1\\}
+\section*{¿Qué es un cuaternio?}\\
+Los cuaternios son una extensión de los números reales, similar a la de los números complejos. Mientras que los números complejos son una extensión de los reales por la suma de la unidad imaginaria \textit{i}, los cuaternios son una extensión generada de manera análoga añadiendo las unidades imaginarias \textit{i, j , k} a los números reales tales que: i^2 = j^2 = k^2 = ijk = -1i^2 = j^2 = k^2 = i j k = - 1.\\
+
+
+Tabla de multiplicación de Cayley:\\
+$$\includegraphics[scale=1]{../../cuaternio.jpg} \\$$
+Los elementos 1, i, j y k son los componentes de la base de los cuaterniones considerado como un R- espacio vectorial de dimensión 4.
+\section{Representaciones de los cuaternios}\\
+\subsection{Vectorial}\\
+El conjunto de los cuaterniones puede expresarse como:\\
+$$\includegraphics[scale=1]{../../vector.jpg}\\$$
+o equivalentemente: \\
+$$\includegraphics[scale=1]{../../vector2.jpg}\\$$
+Además hay, al menos, dos formas, isomorfismos, para representar cuaterniones con matrices. Así el cuaternión q = a + bi + cj + dk, se puede representar:\\
+1. Usando matrices complejas 2x2: \\
+$$\includegraphics[scale=1]{../../matriz.jpg}\\$$
+2. usando matrices complejas 4x4:\\
+$$\includegraphics[scale=1]{../../matriz2.jpg}\\$$
+\subsection{Aritmética básica de cuaternios}
+1. Adición:
+La adición se realiza análogamente a como se hace con los complejos, es decir: término a término:\\
+$$\includegraphics[scale=1]{../../adicion.jpg} \\$$
+2. Producto: El producto se realiza componente a componente, y está dado en su forma completa por:\\
+$$\includegraphics[scale=1]{../../producto.jpg} \\$$
+3. Cocientes: El inverso multiplicativo de un cuaternión x, distinto de cero, está dado por:
+$$\includegraphics[scale=1]{../../cocientes.jpg} \\$$
+4. Exponenciación: La exponenciación de números cuaterniónicos, al igual que sucede con los números complejos, está relacionada con funciones trigonométricas. Dado un cuaternión escrito en forma canónica q = a + bi + cj + dk su exponenciación resulta ser:\\
+ $$\includegraphics[scale=1]{../../exp.jpg} \\$$
+ 
+ \section*{Par de rotación}\\
+ El par de rotación, par motor o torque es una magnitud física que mide el momento de fuerza que se ha de aplicar a un eje que gira sobre sí mismo a una determinada velocidad. Es el momento de fuerza que ejerce un motor sobre el eje de transmisión de potencia; la tendencia de fuerza para girar un objeto alrededor de un eje o punto de apoyo. en otras palabras, el torque de un motor es la fuerza de empuje que va a tener el eje de salida, dato independiente del tiempo que tarde en ejercer dicha fuerza, de otro modo eso sería la potencia.\\
+Sus unidades son kilogramos – metro, libra – pie, libras – pulgada o Newton – metro.
+Este torque o par mezclado con un tiempo de realización, aplicación o ejecución se convierte en potencia:
+La combinación de potencia, par y velocidad en un motor o motorreductor se articula bajo la siguiente fórmula:\\
+\textit{PAR (en kg-m) = Potencia (en HP) x 716 / Velocidad de giro de la flecha del motor o reductor (rpm)
+
+RPM = número de giros de la flecha por minuto
+
+T= HP·716/RPM en kg-m.} 
+\end{document}
