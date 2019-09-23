@@ -1,0 +1,41 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{fourier}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\begin{document}
+$$\textbf{Parametrización Denavit-Hartenberg}$$\\
+\textbf{Medina Rodríguez Francisco Javier\\
+Cinemática de Robots}\\
+
+La parametrización Denavit-Hartenberg es un estándar que se usa para describir la geometría de un brazo o manipulador robótico.  Ayuda a resolver de forma trivial el problema de la cinemática directa y como punto inicial para plantear el más complejo de cinemática inversa. \\
+Los pasos del algoritmo genérico para la obtención de los parámetros DH se detallan a continuación:\\
+
+1. Numerar los eslabones: se llamará «0» a la «tierra», o base fija donde se ancla el robot. «1» el primer eslabón móvil, etc.\\
+2. Numerar las articulaciones: La «1» será el primer grado de libertad, y «n» el último.\\
+3. Localizar el eje de cada articulación: Para pares de revolución, será el eje de giro. Para prismáticos será el eje a lo largo del cuál se mueve el eslabón.\\
+4. Ejes Z: Empezamos a colocar los sistemas XYZ. Situamos los Zi−1 en los ejes de las articulaciones i, con i=1,…,n. Es decir, Z0 va sobre el eje de la 1ª articulación, Z1 va sobre el eje del 2º grado de libertad, etc.\\
+5. Sistema de coordenadas 0: Se sitúa el punto origen en cualquier punto a lo largo de Z0. La orientación de X0 e Y0 puede ser arbitraria, siempre que se respete evidentemente que XYZ sea un sistema dextrógiro.\\
+6. Resto de sistemas: Para el resto de sistemas i=1,…,N-1, colocar el punto origen en la intersección de Zi con la normal común a Zi y Zi+1. En caso de cortarse los dos ejes Z, colocarlo en ese punto de corte. En caso de ser paralelos, colocarlo en algún punto de la articulación i+1.\\
+7. Ejes X: Cada Xi va en la dirección de la normal común a Zi−1 y Zi, en la dirección de Zi−1 hacia Zi.\\
+8. Ejes Y: Una vez situados los ejes Z y X, los Y tienen su direcciones determianadas por la restricción de formar un XYZ dextrógiro.\\
+9. Sistema del extremo del robot: El n-ésimo sistema XYZ se coloca en el extremo del robot (herramienta), con su eje Z paralelo a Zn−1 y X e Y en cualquier dirección válida.\\
+10. Ángulos teta: Cada θi es el ángulo desde Xi−1 hasta Xi girando alrededor de Zi.\\
+11. Distancias d: Cada  di es la distancia desde el sistema XYZ i-1 hasta la intersección de las normales común de  Zi−1 hacia Zi, a lo largo de  Zi−1.\\
+12. Distancias a: Cada  ai es la longitud de dicha normal común.\\
+13. Ángulos alfa: Ángulo que hay que rotar Zi−1 para llegar a Zi, rotando alrededor de Xi.\\
+14. Matrices individuales: Cada eslabón define una matriz de transformación:\\
+$$\includegraphics[scale=1]{matriz.jpg}$$ \\
+
+15. Transformación total: La matriz de transformación total que relaciona la base del robot con su herramienta es la encadenación (multiplicación) de todas esas matrices:\\
+$$\includegraphics[scale=1]{matriz2.jpg} $$\\
+Dicha matriz T permite resolver completamente el problema de cinemática directo en robots manipuladores, ya que dando valores concretos a cada uno de los grados de libertad del robot, obtenemos la posición y orientación 3D de la herramienta en el extremo del brazo.
+\end{document}
